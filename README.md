@@ -47,7 +47,7 @@ Chất lượng cần được đánh giá riêng ở các bước: đủ thông
 
 ### Trạng thái repo
 
-Repo public hiện chỉ có README giới thiệu. Mã nguồn ứng dụng, kết quả kiểm thử và nghiệm thu chưa được đưa vào repo này; vì vậy nội dung trên mô tả cơ sở nghiên cứu và phạm vi đề xuất, không phải danh sách tính năng đã triển khai.
+Repo public hiện chứa phần giới thiệu và hướng dẫn đóng góp trong [CONTRIBUTING.md](CONTRIBUTING.md). Mã nguồn ứng dụng, kết quả kiểm thử và nghiệm thu chưa được đưa vào repo này; vì vậy nội dung trên mô tả cơ sở nghiên cứu và phạm vi đề xuất, không phải danh sách tính năng đã triển khai.
 
 ## English
 
@@ -90,7 +90,7 @@ Evaluation should separately cover information completeness, retrieval quality, 
 
 ### Repository status
 
-This public repository currently contains only this project overview. Application source code, test results, and acceptance evidence are not included here. The sections above summarize the research basis and proposal; they are not a list of implemented features.
+This public repository currently contains the project overview and [contribution guidelines](CONTRIBUTING.md). Application source code, test results, and acceptance evidence are not included here. The sections above summarize the research basis and proposal; they are not a list of implemented features.
 
 ## Tài liệu tham khảo / References
 
