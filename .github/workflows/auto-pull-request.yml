@@ -44,4 +44,4 @@ jobs:
             --base main \
             --head "$BRANCH" \
             --title "$title" \
-            --body "Opened automatically after a push to `$BRANCH`. Review the changes and applicable Actions runs before merging. This workflow never merges."
+            --body "Opened automatically after a push to $BRANCH. Review the changes and applicable Actions runs before merging. This workflow never merges."
