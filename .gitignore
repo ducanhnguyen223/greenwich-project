@@ -1,0 +1,15 @@
+# Local configuration; examples must contain placeholders only.
+.env
+.env.*
+!.env.example
+
+# Dependencies and generated output.
+node_modules/
+/dist/
+/coverage/
+*.log
+
+# Local-only state and private uploads.
+/.local/
+/uploads/
+.DS_Store
