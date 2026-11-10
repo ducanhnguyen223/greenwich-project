@@ -1,0 +1,47 @@
+name: Open pull request
+
+on:
+  push:
+    branches:
+      - 'chore/**'
+      - 'ci/**'
+      - 'docs/**'
+      - 'feat/**'
+      - 'fix/**'
+      - 'test/**'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: auto-pr-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  open-pull-request:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Open a pull request if one is not already open
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.ref_name }}
+          REPOSITORY: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+
+          existing_pr="$(gh pr list --repo "$REPOSITORY" --state open --head "${REPOSITORY%%/*}:$BRANCH" --json url --jq '.[0].url // empty')"
+          if [[ -n "$existing_pr" ]]; then
+            echo "Pull request already exists: $existing_pr"
+            exit 0
+          fi
+
+          title="$(gh api "repos/$REPOSITORY/commits/$SHA" --jq '.commit.message | split("\n")[0]')"
+          gh pr create \
+            --repo "$REPOSITORY" \
+            --base main \
+            --head "$BRANCH" \
+            --title "$title" \
+            --body "Opened automatically after a push to `$BRANCH`. Review the changes and applicable Actions runs before merging. This workflow never merges."
