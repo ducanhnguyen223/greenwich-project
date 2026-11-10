@@ -47,7 +47,7 @@ Chất lượng cần được đánh giá riêng ở các bước: đủ thông
 
 ### Trạng thái repo
 
-Repo public hiện chứa phần giới thiệu và hướng dẫn đóng góp trong [CONTRIBUTING.md](CONTRIBUTING.md). Mã nguồn ứng dụng, kết quả kiểm thử và nghiệm thu chưa được đưa vào repo này; vì vậy nội dung trên mô tả cơ sở nghiên cứu và phạm vi đề xuất, không phải danh sách tính năng đã triển khai.
+Repo public hiện có phần giới thiệu, [hướng dẫn đóng góp](CONTRIBUTING.md) và module nhận diện loại văn bản bàn giao thiết bị với unit tests. ID/tên văn bản được kế thừa từ prototype VanBanAI local (`src/schema.ts`, commit `c4d79c1`); hàm nhận diện và tests được bổ sung riêng ở đây. Chưa có ứng dụng web, AI/RAG hay chức năng xuất tệp trong repo public; các mục phía trên vẫn là phạm vi đề xuất, không phải tính năng đã hoàn thành.
 
 ## English
 
@@ -90,7 +90,17 @@ Evaluation should separately cover information completeness, retrieval quality, 
 
 ### Repository status
 
-This public repository currently contains the project overview and [contribution guidelines](CONTRIBUTING.md). Application source code, test results, and acceptance evidence are not included here. The sections above summarize the research basis and proposal; they are not a list of implemented features.
+This public repository includes the overview, [contribution guidelines](CONTRIBUTING.md), and a device-handover document-type catalog with unit tests. Its ID/title are adapted from the local VanBanAI prototype (`src/schema.ts` at `c4d79c1`); the recognition function and tests are added here. The public repository does not yet contain a web application, AI/RAG, or file export. The sections above describe proposed scope, not completed features.
+
+### Kiểm tra local / Local checks
+
+Node.js 22.18+:
+
+```bash
+npm ci
+npm run check
+npm test
+```
 
 ## Tài liệu tham khảo / References
 
