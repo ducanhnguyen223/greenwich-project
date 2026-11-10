@@ -11,6 +11,10 @@ review prompt, not a hard limit. Explain larger cohesive changes. Do not omit te
 split a working feature into broken commits or create extra commits to meet a quota.
 Existing prototype code must be described as imported/adapted, not new activity.
 
+Keep local configuration, dependencies, generated output and private uploads out of
+commits; see `.gitignore`. Ignore rules are not a security boundary: review staged
+content even for allowed files such as `.env.example`, which must use placeholders.
+
 ## Branch and commit workflow
 
 1. Read instructions; inspect `git status --short --branch`, `git log -1 --oneline`,
